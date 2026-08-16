@@ -1,0 +1,14 @@
+services:
+  web:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - pnpm-store:/pnpm-store
+    ports:
+      - "5173:5173"
+    command: sh -c "corepack enable && corepack prepare pnpm@9.15.9 --activate && pnpm install && pnpm dev"
+
+volumes:
+  pnpm-store:
