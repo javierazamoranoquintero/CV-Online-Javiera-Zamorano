@@ -1,9 +1,12 @@
 name: Deploy a GitHub Pages
 
+# Se ejecuta automáticamente cada vez que subes cambios a "main".
 on:
   push:
     branches: [main]
 
+# Permite que la Action escriba en el repositorio (para crear/actualizar
+# la rama gh-pages).
 permissions:
   contents: write
 
@@ -14,16 +17,15 @@ jobs:
       - name: Descargar el código del repositorio
         uses: actions/checkout@v4
 
-      - name: Preparar pnpm (misma versión que usamos localmente)
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.9
-
       - name: Preparar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
+
+      - name: Preparar pnpm (misma versión que usamos localmente)
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.15.9 --activate
 
       - name: Instalar dependencias
         run: pnpm install --frozen-lockfile
