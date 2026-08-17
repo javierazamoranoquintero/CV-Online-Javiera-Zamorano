@@ -1,16 +1,14 @@
 /**
  * Configuración global del sitio.
  *
- * TODO(Javiera): tu archivo tenía dos datos de contacto inconsistentes
- * entre sí — el link de email apuntaba a "hola@javiera.com" pero el
- * texto visible decía "javiera.zamorano@email.com"; el LinkedIn mostraba
- * "linkedin.com/in/javierazamoranq" como texto pero el href seguía en "#".
- * No adiviné cuál es el dato correcto: dejé placeholders explícitos acá.
- * Confírmame los reales y los dejo listos en un solo lugar.
+ * TODO(Javiera): SOCIAL_LINKS.linkedin y .github siguen como placeholder.
+ * Reemplázalos por tus URLs reales cuando las tengas — quedan aplicados
+ * en todo el sitio (nav, footer, sección de contacto) desde este único
+ * archivo.
  */
 export const CONTACT_EMAIL = 'javierazamoranoq@gmail.com';
 
 export const SOCIAL_LINKS = {
-    linkedin: 'www.linkedin.com/in/javiera-zamorano-quintero',
+    linkedin: '#', // ej: https://linkedin.com/in/javierazamoranoquintero
     github: '#', // https://github.com/tu-usuario
 };
