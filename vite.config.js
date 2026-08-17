@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
-    base: '/CV-Online-Javiera-Zamorano/',
+export default defineConfig(({ command }) => ({
+    base: command === 'build' ? '/CV-Online-Javiera-Zamorano/' : '/',
     server: {
         port: 5173,
         host: true,
@@ -14,4 +14,4 @@ export default defineConfig({
         outDir: 'dist',
         sourcemap: true,
     },
-});
+}));
