@@ -1,62 +1,58 @@
 import { timeline } from '../data/timeline.js';
 
 /**
- * Estilos por tipo de hito. "origin" (el hito fundacional, Antropología)
- * se muestra visualmente más tenue que los demás, reforzando que es
- * la base sobre la que se construye el resto de la trayectoria.
+ * Estilos por tipo de hito. Las 4 tarjetas comparten exactamente el
+ * mismo tratamiento visual (tarjeta, punto, comportamiento de hover)
+ * en ambos modos claro y oscuro; solo cambia el color del borde del
+ * punto según qué tan reciente es el hito.
  */
-// Radios en 'rounded' (0.5rem) por consistencia con el resto de las
-// tarjetas del sitio, según DESIGN.md > Shapes.
-// itemExtra en "origin": el hito fundacional (Antropología) se muestra
-// atenuado y solo alcanza opacidad completa al hover — refuerza que es
-// la base sobre la que se construye el resto de la trayectoria.
 const MARKER_CONFIG = {
     active: {
         markerWrapper: 'border-primary group-hover:scale-110 transition-transform',
         dot: '<div class="w-2 h-2 bg-primary rounded-full"></div>',
-        card: 'bg-surface p-6 rounded border border-outline-variant/20 shadow-sm lift-hover',
-        badge: 'bg-surface-container-high text-on-surface-variant border border-outline-variant/30',
+        card: 'bg-surface dark:bg-inverse-on-surface/5 p-6 rounded border border-outline-variant/20 dark:border-inverse-on-surface/10 shadow-sm lift-hover transition-colors',
+        badge: 'bg-surface-container-high dark:bg-inverse-on-surface/10 text-on-surface-variant dark:text-inverse-on-surface/70 border border-outline-variant/30 dark:border-inverse-on-surface/20',
         itemExtra: '',
     },
     recent: {
         markerWrapper: 'border-primary/70 group-hover:scale-110 transition-transform',
         dot: '',
-        card: 'bg-surface p-6 rounded border border-outline-variant/20 shadow-sm lift-hover',
-        badge: 'bg-surface-container-high text-on-surface-variant border border-outline-variant/30',
+        card: 'bg-surface dark:bg-inverse-on-surface/5 p-6 rounded border border-outline-variant/20 dark:border-inverse-on-surface/10 shadow-sm lift-hover transition-colors',
+        badge: 'bg-surface-container-high dark:bg-inverse-on-surface/10 text-on-surface-variant dark:text-inverse-on-surface/70 border border-outline-variant/30 dark:border-inverse-on-surface/20',
         itemExtra: '',
     },
     mid: {
         markerWrapper: 'border-primary/40 group-hover:scale-110 transition-transform',
         dot: '',
-        card: 'bg-surface p-6 rounded border border-outline-variant/20 shadow-sm lift-hover',
-        badge: 'bg-surface-container-high text-on-surface-variant border border-outline-variant/30',
+        card: 'bg-surface dark:bg-inverse-on-surface/5 p-6 rounded border border-outline-variant/20 dark:border-inverse-on-surface/10 shadow-sm lift-hover transition-colors',
+        badge: 'bg-surface-container-high dark:bg-inverse-on-surface/10 text-on-surface-variant dark:text-inverse-on-surface/70 border border-outline-variant/30 dark:border-inverse-on-surface/20',
         itemExtra: '',
     },
     origin: {
-        markerWrapper: 'border-outline-variant',
+        markerWrapper: 'border-primary/20 group-hover:scale-110 transition-transform',
         dot: '',
-        card: 'bg-surface/50 p-6 rounded border border-outline-variant/20',
-        badge: 'bg-surface-container-high/50 text-on-surface-variant',
-        itemExtra: 'opacity-80 hover:opacity-100 transition-opacity',
+        card: 'bg-surface dark:bg-inverse-on-surface/5 p-6 rounded border border-outline-variant/20 dark:border-inverse-on-surface/10 shadow-sm lift-hover transition-colors',
+        badge: 'bg-surface-container-high dark:bg-inverse-on-surface/10 text-on-surface-variant dark:text-inverse-on-surface/70 border border-outline-variant/30 dark:border-inverse-on-surface/20',
+        itemExtra: '',
     },
 };
 
 function renderMilestone(milestone) {
     const config = MARKER_CONFIG[milestone.markerStyle];
     const subtitleHtml = milestone.subtitle
-        ? `<p class="font-body-md text-body-md text-primary mb-4">${milestone.subtitle}</p>`
+        ? `<p class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim mb-4">${milestone.subtitle}</p>`
         : '';
 
     return `
     <div class="relative pl-12 group ${config.itemExtra}">
-      <div class="absolute left-0 top-1.5 w-8 h-8 rounded-full bg-surface border-4 flex items-center justify-center z-10 ${config.markerWrapper}">
+      <div class="absolute left-0 top-1.5 w-8 h-8 rounded-full bg-surface dark:bg-inverse-surface border-4 flex items-center justify-center z-10 ${config.markerWrapper}">
         ${config.dot}
       </div>
       <div class="${config.card}">
         <span class="inline-block px-3 py-1 font-code-sm text-code-sm rounded-full mb-3 ${config.badge}">${milestone.period}</span>
-        <h3 class="font-headline-md text-headline-md text-on-surface mb-1">${milestone.title}</h3>
+        <h3 class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-1">${milestone.title}</h3>
         ${subtitleHtml}
-        <p class="font-body-md text-body-md text-on-surface-variant">
+        <p class="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70">
           ${milestone.description}
         </p>
       </div>

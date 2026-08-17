@@ -46,6 +46,7 @@ export const timeline = [
         id: 'antropologia',
         period: '2014 - 2018',
         title: 'Licenciatura en Antropología',
+        subtitle: 'Formación Académica',
         description:
             'Formación rigurosa en métodos de investigación social, etnografía y análisis cultural. Fundación de la capacidad para entender sistemas complejos desde una perspectiva humana.',
         markerStyle: 'origin',

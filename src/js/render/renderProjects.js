@@ -1,14 +1,14 @@
 import { projects } from '../data/projects.js';
 
 const CATEGORY_BADGE_STYLES = {
-    tertiary: 'bg-tertiary-container/30 text-on-tertiary-container border-tertiary-container/30',
-    primary: 'bg-primary/10 text-primary border-primary/20',
-    secondary: 'bg-secondary-container/20 text-on-secondary-container border-secondary-container/20',
+    tertiary: 'bg-tertiary-container/30 dark:bg-tertiary-fixed-dim/20 text-on-tertiary-container dark:text-tertiary-fixed-dim border-tertiary-container/30 dark:border-tertiary-fixed-dim/20',
+    primary: 'bg-primary/10 text-primary dark:text-primary-fixed-dim border-primary/20',
+    secondary: 'bg-secondary-container/20 dark:bg-secondary-fixed-dim/20 text-on-secondary-container dark:text-secondary-fixed-dim border-secondary-container/20 dark:border-secondary-fixed-dim/20',
 };
 
 const TAG_STYLES = {
-    neutral: 'bg-surface-container-high text-on-surface-variant',
-    primary: 'bg-primary/5 text-primary font-medium',
+    neutral: 'bg-surface-container-high dark:bg-inverse-on-surface/10 text-on-surface-variant dark:text-inverse-on-surface/70',
+    primary: 'bg-primary/5 text-primary dark:text-primary-fixed-dim font-medium',
 };
 
 // DESIGN.md > Skill Tags: "High roundedness (rounded-xl)" — se aplica
@@ -17,9 +17,9 @@ const TAG_STYLES = {
 const TAG_RADIUS = 'rounded-xl';
 
 const ICON_MEDIA_STYLES = {
-    tertiary: { bg: 'bg-tertiary-container/10', iconColor: 'text-tertiary' },
-    primary: { bg: 'bg-primary/10', iconColor: 'text-primary' },
-    secondary: { bg: 'bg-secondary-container/10', iconColor: 'text-secondary' },
+    tertiary: { bg: 'bg-tertiary-container/10', iconColor: 'text-tertiary dark:text-tertiary-fixed-dim' },
+    primary: { bg: 'bg-primary/10', iconColor: 'text-primary dark:text-primary-fixed-dim' },
+    secondary: { bg: 'bg-secondary-container/10', iconColor: 'text-secondary dark:text-secondary-fixed-dim' },
 };
 
 function renderBadge(project) {
@@ -59,15 +59,15 @@ function renderTags(project) {
 function renderCard(project) {
     // DESIGN.md > Project Cards: "Standard 0.5rem (rounded) corners".
     return `
-    <div class="bg-surface-container-low border border-outline-variant/20 rounded overflow-hidden lift-hover flex flex-col">
+    <div class="bg-surface-container-low dark:bg-inverse-on-surface/5 border border-outline-variant/20 dark:border-inverse-on-surface/10 rounded overflow-hidden lift-hover flex flex-col transition-colors">
       ${renderMedia(project)}
       <div class="p-6 flex flex-col flex-grow">
-        <h3 class="font-headline-md text-xl text-on-surface mb-3">${project.title}</h3>
-        <p class="font-body-md text-on-surface-variant mb-6 flex-grow">${project.description}</p>
+        <h3 class="font-headline-md text-xl text-on-surface dark:text-inverse-on-surface mb-3">${project.title}</h3>
+        <p class="font-body-md text-on-surface-variant dark:text-inverse-on-surface/70 mb-6 flex-grow">${project.description}</p>
         <div class="flex flex-wrap gap-2 mb-6">
           ${renderTags(project)}
         </div>
-        <a class="text-primary font-label-caps text-label-caps flex items-center gap-2 group/link" href="${project.href}">
+        <a class="text-primary dark:text-primary-fixed-dim font-label-caps text-label-caps flex items-center gap-2 group/link" href="${project.href}">
           Ver más
           <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
         </a>
