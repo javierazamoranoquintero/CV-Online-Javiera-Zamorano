@@ -20,8 +20,8 @@ export const skills = [
         icon: 'psychology',
         title: 'Investigación y Análisis',
         description:
-            'Metodologías cualitativas para extraer necesidades latentes y mapear contextos sociotécnicos.',
-        tags: ['Etnografía Digital', 'UX Research', 'Entrevistas en Profundidad', 'Service Blueprinting'],
+            'Formación rigurosa en investigación social cualitativa: desde la problematización y el diseño metodológico hasta el diagnóstico, diseño y evaluación de programas de intervención social.',
+        tags: ['Metodología Cualitativa', 'Diagnóstico Sociocultural', 'Investigación en Terreno', 'Evaluación Social'],
         variant: 'tertiary',
     },
     {
@@ -29,8 +29,8 @@ export const skills = [
         icon: 'developer_mode',
         title: 'Desarrollo Full Stack',
         description:
-            'Construcción de aplicaciones escalables, desde arquitecturas backend robustas hasta interfaces reactivas.',
-        tags: ['JavaScript/TypeScript', 'React & Next.js', 'Node.js/Express', 'PostgreSQL & MongoDB', 'Tailwind CSS'],
+            'Formación integral en desarrollo Full Stack JavaScript: fundamentos de front-end, programación avanzada en JavaScript, bases de datos relacionales, y desarrollo de aplicaciones web y APIs backend con Node.js y Express.',
+        tags: ['JavaScript', 'Node.js & Express', 'Sequelize ORM', 'SQL & PostgreSQL'],
         variant: 'primary',
         featured: true,
     },
@@ -39,8 +39,8 @@ export const skills = [
         icon: 'database',
         title: 'Procesamiento de Datos',
         description:
-            'Gestión, limpieza y análisis de grandes volúmenes de información para modelar comportamientos.',
-        tags: ['Python (Pandas/NumPy)', 'SQL Avanzado', 'ETL Pipelines', 'Data Visualization'],
+            'Ingesta, almacenamiento y procesamiento distribuido de datos masivos, desde la arquitectura Hadoop hasta el análisis avanzado con Spark y la visualización de resultados.',
+        tags: ['Ecosistema Hadoop', 'Apache Spark & Python', 'Hive, Impala & Kudu', 'Kafka & NiFi'],
         variant: 'secondary',
     },
 ];

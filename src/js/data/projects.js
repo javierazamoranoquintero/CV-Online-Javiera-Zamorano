@@ -1,11 +1,6 @@
 /**
  * Contenido de la sección "Proyectos Destacados".
  *
- * NOTA PARA JAVIERA: estos 3 proyectos son placeholders heredados del
- * prototipo de Stitch. Cuando tengas tus proyectos reales, reemplaza
- * los objetos de este arreglo — no necesitas tocar el HTML ni el
- * render/renderProjects.js.
- *
  * @typedef {'tertiary' | 'primary' | 'secondary'} CategoryVariant
  * @typedef {{ type: 'image', src: string, alt: string } | { type: 'icon', icon: string }} ProjectMedia
  * @typedef {Object} Project
@@ -23,43 +18,40 @@
 /** @type {Project[]} */
 export const projects = [
     {
-        id: 'etnografia-digital',
+        id: 'relatos-tolten',
         category: 'Antropología',
         categoryStyle: 'tertiary',
-        title: 'Etnografía Digital: Comportamiento en Redes',
+        title: 'Relatos y Leyendas del Estuario del Río Toltén',
         description:
-            'Estudio sobre patrones de interacción social en plataformas de e-commerce para optimizar la retención de usuarios.',
-        tags: ['Etnografía', 'UX Research'],
+            'Libro que recopila testimonios orales de habitantes del estuario del río Toltén, resultado del trabajo de campo junto a comunidades de pescadores artesanales y mapuche lafkenche realizado con Servicio País.',
+        tags: ['Etnografía', 'Historia Oral', 'Investigación Cualitativa'],
         tagStyle: 'neutral',
-        media: {
-            type: 'image',
-            src: 'https://lh3.googleusercontent.com/aida/AP1WRLvzg4t1XBBZbc3rafOFJFzg25gOgi5JkDOpl6IXnG8_iuF2faSSe8SS31r5pk05NxzGgjUYxdM4nVpSioolXc6BHUbajAzSSIaiTTo7XGo6cm2scVSc1L3Qnk09sIXdm4LdSXoVvyd-i0e-FG_Q1ajcIRlk4R0KLSmOkTZ2LdNaZ26aku815BUmUIFotJ98xmGwjTHGvgU3TkhR7JXmEwAkt2jgsnQDRgxfJ31s37N4YJS7aVuo5bHSqyE',
-            alt: 'Panel de análisis de etnografía digital sobre comportamiento en redes sociales',
-        },
-        href: '#',
+        media: { type: 'icon', icon: 'auto_stories' },
+        // Sin link público todavía: lleva a Contacto para quien quiera más info.
+        href: 'https://www.isbnchile.cl/catalogo.php?mode=detalle&nt=136944',
     },
     {
-        id: 'greenroute',
+        id: 'ptc-server',
         category: 'Desarrollo',
         categoryStyle: 'primary',
-        title: 'E-commerce Platform: GreenRoute',
+        title: 'PTC Server — Pichilemu Tennis Club',
         description:
-            'Aplicación full-stack para logística sustentable, permitiendo a usuarios reducir su huella de carbono en envíos.',
-        tags: ['Node.js', 'React', 'PostgreSQL'],
+            'Aplicación web monolítica para la gestión de un club de tenis: sistema de reservas, noticias y administración de usuarios.',
+        tags: ['Node.js', 'Express', 'Sequelize ORM'],
         tagStyle: 'primary',
-        media: { type: 'icon', icon: 'eco' },
-        href: '#',
+        media: { type: 'icon', icon: 'sports_tennis' },
+        href: 'https://github.com/javierazamoranoquintero/PTC',
     },
     {
-        id: 'predictor-tendencias',
+        id: 'capstone-bigdata',
         category: 'Big Data',
         categoryStyle: 'secondary',
-        title: 'Predictor de Tendencias Urbanas',
+        title: 'Proyecto Capstone — Samsung Innovation Campus',
         description:
-            'Modelo analítico para predecir flujos migratorios urbanos basado en datos públicos y sensores IoT.',
-        tags: ['Python', 'Spark', 'Tableau'],
+            'Proyecto final del programa de especialización en Big Data, actualmente en desarrollo. Vuelve pronto para conocer los detalles.',
+        tags: ['Próximamente'],
         tagStyle: 'neutral',
-        media: { type: 'icon', icon: 'query_stats' },
-        href: '#',
+        media: { type: 'icon', icon: 'schedule' },
+        href: '#contacto',
     },
 ];
